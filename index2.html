@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education and Slider Sections</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2, h3 {
+            text-align: left;
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .education-icon {
+            position: relative;
+            margin-right: 15px;
+            text-align: center;
+        }
+
+        .year {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 0 10px 0 0;
+        }
+
+        .bag-icon {
+            width: 40px;
+            height: auto;
+        }
+
+        .education-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-details h3 {
+            margin: 0 0 5px;
+        }
+
+        .education-details p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* Circular Slider Section */
+        .circular-slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 50px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .slider-container {
+            margin: 0 15px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .slider-container.active {
+            opacity: 1;
+        }
+
+        .slider-image {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .slider-image.large {
+            width: 150px;
+            height: 150px;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        .slider-button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="education-icon">
+                <img src="bag-icon.png" alt="Bag Icon" class="bag-icon">
+                <span class="year">2010</span>
+            </div>
+            <div class="education-details">
+                <h3>Specialize of course</h3>
+                <p>University of Study</p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-icon">
+                <span class="year">2009</span>
+            </div>
+            <div class="education-details">
+                <h3>Specialize of course</h3>
+                <p>University of Study</p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circular Slider Section -->
+    <section class="circular-slider">
+        <button class="slider-button prev">&#10094;</button>
+        <div class="slider-container">
+            <img src="project1.png" alt="Project Image" class="slider-image">
+            <h3>METIEW & SMITH</h3>
+        </div>
+        <div class="slider-container active">
+            <img src="project2.png" alt="Project Image" class="slider-image large">
+            <h3>ALEX NOWAK</h3>
+        </div>
+        <div class="slider-container">
+            <img src="project3.png" alt="Project Image" class="slider-image">
+            <h3>VICTORY</h3>
+        </div>
+        <button class="slider-button next">&#10095;</button>
+    </section>
+
+    <script>
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const sliderContainers = document.querySelectorAll('.slider-container');
+
+        let currentIndex = 1;
+
+        function updateSlider() {
+            sliderContainers.forEach((container, index) => {
+                if (index === currentIndex) {
+                    container.classList.add('active');
+                } else {
+                    container.classList.remove('active');
+                }
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? sliderContainers.length - 1 : currentIndex - 1;
+            updateSlider();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === sliderContainers.length - 1) ? 0 : currentIndex + 1;
+            updateSlider();
+        });
+
+        updateSlider();
+    </script>
+</body>
+</html>
+
+ let x = "Ranjith";
+      let y = 118;
+      console.log(x + " " + y);
+
+      let dat = 
+      {
+        name : "Ranjith S",
+        Roll : "22CS118",
+        tel : 7395860211
+      }
+
+      let data = {
+        "name" : "Ranjith S",
+        "Roll" : "22CS118",
+        "tel" : 7395860211
+      }
+
+      console.log(dat);
+      console.log(data)
