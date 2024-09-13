@@ -10,23 +10,23 @@
             height: 100vh;
             width: 100vw;
             overflow: hidden;
-            margin: 0px;
+            margin: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             background: #bc4e9c;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+            background: linear-gradient(to right, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */       
 
         }
 
         .login-container {
-            background-color: #fff;
-            border-radius: 8px;
-            height: 40vh;
-            width: 30vw;
             display: flex;
+            flex-direction: column;
+            background-color: #ffffff87;
+            border-radius: 15px 0px 15px 0;
+            height: 90vh;
+            width: 40vw;
             justify-content: center;
             align-items: center;
             box-shadow:
@@ -40,49 +40,72 @@
         }
 
         .login-form {
+
             width: 70%;
             height: 100%;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            gap: 0.8rem;
-
-        }
+            gap: 0.9rem;
+             }
 
         input,
         button {
-            padding: 1rem;
+            padding: 1.2rem;
             width: 90%;
-            font-weight: bold;
+            font-weight: medium;
             border: none;
-            border-bottom: 2px solid transparent;
-            background-color: #f8f8f8;
+            border-bottom: 3px solid transparent;
+            background-color: #f1f1f1a7;
+            border-radius: 15px;
+
         }
 
         input:focus {
-            border-bottom: 2px solid #9c1b73;
+            border-bottom: 2px solid #787276;
             outline: none;
         }
 
+
         .submit-btn {
-            background-color: #7d0935;
-            width: 90%;
-            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #0f5e92da;
+            height: 11%;
+            width: 70%;
+            font-size: medium;
+            text-align: center;
+            color: #ffffffdf;
+            margin-top: 20px;
+            cursor: pointer;
+            padding-top: 11px;
+        }
+        button:hover
+        {
+            border: 1.3px solid #084150;
+        }
+        
+        h3{
+            font-size: 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+            color: #8a3652;
         }
     </style>
 
 </head>
-
 <body>
 
     <div class="login-container">
+        <h3>SIGN &nbsp;IN</h3>
 
-        <form class="login-form" onsubmit="formdata(event)">
+        <form class="login-form" onclick="formdata(event)">
             <!-- <form class="login-form"> -->
             <input type="text" name="name" id="name" placeholder="Name">
             <input type="email" name="" id="email" placeholder="Email">
-            <input type="number" name="" id="number" placeholder="Phone">
+            <input type="number" name="" id="age" placeholder="Age">
             <input type="password" name="" id="password" placeholder="Password">
             <button type="submit" class="submit-btn">submit</button>
             <!-- <button class="submit-btn" onclick="formdata()">Register</button> -->
@@ -94,18 +117,35 @@
         e.preventDefault();
         let name = document.getElementById("name").value
         let email = document.getElementById("email").value
-        let number = document.getElementById("number").value
         let password = document.getElementById("password").value
-        console.log(name)
+        let age = document.getElementById("age").value
+
+        if( name != "" && email != "" &&  password != "" && age != "")
+    {
+        if(name == "Ranjith S" || email == "ranjiths@gmail.com")
+    {
+        c("Username Already exists try another name")
+    }
+    else{
+        alert("Succesfully Created")
+    }
+}
+
+    else 
+    {
+        alert("Empty field not allowed!")
+    }
+        // console.log(name)
         // document.write(name)
         const data = {
             username: name,
             useremail: email,
             userphone: number,
-            userpassword: password
+            userpassword: password,
+            usertype: age >= 18 ? 'Major' : 'Minor'
         }
-        const { username, useremail, userphone, userpassword } = data
-        console.log(useremail)
+        const { username, useremail,  userpassword, usertype } = data
+        console.log(useremail, usertype )
     }
     let data1 = [1, 2, 3, 4]
     let data2 = ['a', 'b', 'c', 'd']
@@ -113,4 +153,4 @@
     console.log(data3)
 </script>
 
-</html>
+</html> 

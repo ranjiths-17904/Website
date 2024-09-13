@@ -333,8 +333,6 @@
         }
 
         .education-details {
-            display: flex;
-            flex-direction: column;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -588,78 +586,7 @@
     <div class="force-overflow"></div>
   </div>
 <script>
-
-     // Scrolling functionality for the project carousel
-     const carousel = document.getElementById('carousel');
-        const leftButton = document.querySelector('.carousel-button.left');
-        const rightButton = document.querySelector('.carousel-button.right');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        let scrollPosition = 0;
-        const cardWidth = projectCards[0].clientWidth + 20; // 20px is the gap
-
-        // Scroll left
-        leftButton.addEventListener('click', () => {
-            if (scrollPosition > 0) {
-                scrollPosition -= cardWidth;
-                carousel.style.transform = `translateX(-${scrollPosition}px)`;
-            }
-        });
-
-        // Scroll right
-        rightButton.addEventListener('click', () => {
-            if (scrollPosition < (cardWidth * (projectCards.length - 3))) {
-                scrollPosition += cardWidth;
-                carousel.style.transform = `translateX(-${scrollPosition}px)`;
-            }
-        });
-
-        // Display project details on click
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                // Hide all other project details
-                projectCards.forEach(c => c.querySelector('.project-details').style.display = 'none');
-
-                // Show details of the clicked project
-                const details = card.querySelector('.project-details');
-                details.style.display = 'block';
-            });
-        });
-
     
-    $(document).ready(function () {
-          if (!$.browser.webkit) {
-              $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
-          }
-      });
-      const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        const sliderContainers = document.querySelectorAll('.slider-container');
-
-        let currentIndex = 1;
-
-        function updateSlider() {
-            sliderContainers.forEach((container, index) => {
-                if (index === currentIndex) {
-                    container.classList.add('active');
-                } else {
-                    container.classList.remove('active');
-                }
-            });
-        }
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? sliderContainers.length - 1 : currentIndex - 1;
-            updateSlider();
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === sliderContainers.length - 1) ? 0 : currentIndex + 1;
-            updateSlider();
-        });
-
-        updateSlider();
-
 </script>
 
 </body>
