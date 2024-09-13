@@ -65,12 +65,15 @@
 
         .section2, .section3, .section4, .section5 {
             width: 80%;
+            display: flex;
+            flex-direction: column;
             padding: 20px;
             background-color: #fff;
             margin: 15px 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
+
 
         .section-title {
             color: rgb(182, 22, 75);
@@ -318,7 +321,7 @@
             color: white;
             padding: 5px 10px;
             border-radius: 0 10px 0 10px;
-            margin: 15px;
+            margin: 10px;
             /* margin-right: 20px; */
         }
 
@@ -330,6 +333,8 @@
         }
 
         .education-details {
+            display: flex;
+            flex-direction: column;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -343,24 +348,6 @@
         .education-details p {
             margin: 0;
             
-        }
-        .section6 {
-            width: 970px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            font-weight: bold;
-            border-radius: 5px;
-            background: #68043e;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #6aa702, #e22da0);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #02ab7e, #8d0d76);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            margin-bottom: 1.3rem;
-
         }
 
         
@@ -395,7 +382,7 @@
             </div>
             <div class="education-details">
                 <h3>High School</h3>
-                <p>M.Nanjappa Chettair Matriculation Higher Secondary School Muthalipalayam pirivu, Arasur Post<br> Coimbatore - 641407</p>
+                <p>M.Nanjappa Chettair Matriculation Higher Secondary School Muthalipalayam pirivu, Arasur<br> Coimbatore - 641407</p>
                 <p>PERCENTAGE : 95.2%</p>
             </div>
         </div>
@@ -407,7 +394,7 @@
             </div>
             <div class="education-details">
                 <h3>Intermediate School</h3>
-                <p>M.Nanjappa Chettair Matriculation Higher Secondary School, Muthalipalayam pirivu, Arasur Post<br> Coimbatore - 641407</p>
+                <p>M.Nanjappa Chettair Matriculation Higher Secondary School, Muthalipalayam pirivu, Arasur <br> Coimbatore - 641407</p>
                 <p>PERCENTAGE : 87.6%</p>
             </div>
         </div>
@@ -419,7 +406,7 @@
             </div>
             <div class="education-details">
                 <h3>College</h3>
-                <p>Sri Shakthi Institute Of Engineering And Technology, L&T Bypass, Chinniyampalayam main Post<br> Coimbatore - 641062</p>
+                <p>Sri Shakthi Institute Of Engineering And Technology, L&T Bypass, Chinniyampalayam Main , <br> Coimbatore - 641062</p>
                 <p>BE-CSE with CGPA : 8.78</p>
             </div>
         </div>
@@ -488,19 +475,62 @@
         </div>
         </div>
     </div>
-<aside>
-    <div class="section6">
-        <a href="tel:+91 7395860211">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:ranjithselvaraj04@gmail.com">
-            <i class="fa-solid fa-envelope text-white"></i>
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank">
-            <i class="fa-brands fa-linkedin-in text-white"></i>
-        </a>
+
+    <!-- <div class="section7">
+        <h1 class="section7-title">PROJECTS</h1>
+        <button class="carousel-button left">⮜</button>
+        <div class="project-carousel" id="carousel">
+            <div class="project-card" data-project="1">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="project-details">
+                    <h2>Project 1</h2>
+                    <p>Details about project 1...</p>
+                </div>
+            </div>
+            <div class="project-card" data-project="2">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="project-details">
+                    <h2>Project 2</h2>
+                    <p>Details about project 2...</p>
+                </div>
+            </div>
+            <div class="project-card" data-project="3">
+                <img src="project3.jpg" alt="Project 3">
+                <div class="project-details">
+                    <h2>Project 3</h2>
+                    <p>Details about project 3...</p>
+                </div>
+            </div>
+            <div class="project-card" data-project="4">
+                <img src="project4.jpg" alt="Project 4">
+                <div class="project-details">
+                    <h2>Project 4</h2>
+                    <p>Details about project 4...</p>
+                </div>
+            </div>
+            <div class="project-card" data-project="5">
+                <img src="project5.jpg" alt="Project 5">
+                <div class="project-details">
+                    <h2>Project 5</h2>
+                    <p>Details about project 5...</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-button right">⮞</button>
     </div>
-</aside>
+
+        <div class="section6">
+            <a href="tel:+91 7395860211">
+                <i class="fa fa-phone"></i>
+            </a>
+            <a href="mailto:ranjithselvaraj04@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+     -->
 
    <div class="parent">
   <div class="child child-1">
@@ -558,6 +588,45 @@
     <div class="force-overflow"></div>
   </div>
 <script>
+
+     // Scrolling functionality for the project carousel
+     const carousel = document.getElementById('carousel');
+        const leftButton = document.querySelector('.carousel-button.left');
+        const rightButton = document.querySelector('.carousel-button.right');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        let scrollPosition = 0;
+        const cardWidth = projectCards[0].clientWidth + 20; // 20px is the gap
+
+        // Scroll left
+        leftButton.addEventListener('click', () => {
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                carousel.style.transform = `translateX(-${scrollPosition}px)`;
+            }
+        });
+
+        // Scroll right
+        rightButton.addEventListener('click', () => {
+            if (scrollPosition < (cardWidth * (projectCards.length - 3))) {
+                scrollPosition += cardWidth;
+                carousel.style.transform = `translateX(-${scrollPosition}px)`;
+            }
+        });
+
+        // Display project details on click
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Hide all other project details
+                projectCards.forEach(c => c.querySelector('.project-details').style.display = 'none');
+
+                // Show details of the clicked project
+                const details = card.querySelector('.project-details');
+                details.style.display = 'block';
+            });
+        });
+
+    
     $(document).ready(function () {
           if (!$.browser.webkit) {
               $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
